@@ -24,7 +24,6 @@ const Notes: React.FC<{ notes: my_notes[] }> = ({ notes }) => {
     <section>
       <header className="notes__header">
         {!search && <h1>Notes</h1>}
-
         <input
           type="text"
           placeholder="Search..."
@@ -32,7 +31,6 @@ const Notes: React.FC<{ notes: my_notes[] }> = ({ notes }) => {
           onChange={(e) => setQuery(e.target.value)}
           className={`${search ? "" : "hide"}`}
         />
-
         <button
           className="btn"
           onClick={() => {
@@ -54,7 +52,6 @@ const Notes: React.FC<{ notes: my_notes[] }> = ({ notes }) => {
                 backgroundColor: colors[~~(Math.random() * colors.length)],
               }}
             >
-              {index + 1}
               <h4>{item?.title}</h4>
               <p>{item?.date}</p>
             </NavLink>
