@@ -9,6 +9,7 @@ const Notes: React.FC<{ notes: my_notes[] }> = ({ notes }) => {
   const [query, setQuery] = useState<string>("");
   const [search, setSearch] = useState<boolean>(false);
   const [fltrd, setFiltred] = useState<my_notes[]>(notes);
+  const colors = ["orange", "#c8c800", "#7634d8", "pink"];
   useEffect(() => {
     if (query) {
       const filtered = notes.filter((note) =>
@@ -45,7 +46,14 @@ const Notes: React.FC<{ notes: my_notes[] }> = ({ notes }) => {
       <div className="notes__container">
         {fltrd?.map((item, index: number) => {
           return (
-            <NavLink to={`edit-note/${item?.id}`} key={index} className="note">
+            <NavLink
+              to={`edit-note/${item?.id}`}
+              key={index}
+              className="note"
+              style={{
+                backgroundColor: colors[~~(Math.random() * colors.length)],
+              }}
+            >
               <h4>{item?.title}</h4>
               <p>{item?.date}</p>
             </NavLink>
