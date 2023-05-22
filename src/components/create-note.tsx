@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction, useState } from "react";
 import { my_notes } from "../App";
 import { IoIosArrowBack } from "react-icons/io";
 import { NavLink, useNavigate } from "react-router-dom";
-import getTime from "../getTime";
+import getTime from "./getTime";
 import "../index.css";
 
 const CreateNote: React.FC<{
