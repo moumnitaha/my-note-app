@@ -9,7 +9,7 @@ const Notes: React.FC<{ notes: my_notes[] }> = ({ notes }) => {
   const [query, setQuery] = useState<string>("");
   const [search, setSearch] = useState<boolean>(false);
   const [fltrd, setFiltred] = useState<my_notes[]>(notes);
-  const colors = ["orange", "#c8c800", "#7634d8", "pink"];
+  const colors = ["orange", "#c8c800", "#7634d8", "#ff7d94"];
   useEffect(() => {
     if (query) {
       const filtered = notes.filter((note) =>
@@ -54,6 +54,7 @@ const Notes: React.FC<{ notes: my_notes[] }> = ({ notes }) => {
                 backgroundColor: colors[~~(Math.random() * colors.length)],
               }}
             >
+              {index + 1}
               <h4>{item?.title}</h4>
               <p>{item?.date}</p>
             </NavLink>

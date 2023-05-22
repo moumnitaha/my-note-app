@@ -35,7 +35,7 @@ const EditNote: React.FC<{
 
   const deleteNote = () => {
     const new_notes = notes.filter((item) => id && item.id !== id);
-    setNotes(new_notes);
+    setTimeout(() => setNotes(new_notes), 200);
     navigate("/");
   };
 
